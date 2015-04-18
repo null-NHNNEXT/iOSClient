@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "NullModel.h"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) NullModel *model;
 
 @end
 

@@ -15,6 +15,8 @@
 		A521E8851AE27F0F00EC140E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A521E8841AE27F0F00EC140E /* Images.xcassets */; };
 		A521E8881AE27F0F00EC140E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A521E8861AE27F0F00EC140E /* LaunchScreen.xib */; };
 		A521E8941AE27F0F00EC140E /* ProjectNullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A521E8931AE27F0F00EC140E /* ProjectNullTests.m */; };
+		A521E8A01AE27F7B00EC140E /* NullModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A521E89F1AE27F7B00EC140E /* NullModel.m */; };
+		A521E8A31AE27F8A00EC140E /* NullRestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A521E8A21AE27F8A00EC140E /* NullRestApi.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,12 @@
 		A521E88D1AE27F0F00EC140E /* ProjectNullTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectNullTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A521E8921AE27F0F00EC140E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A521E8931AE27F0F00EC140E /* ProjectNullTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectNullTests.m; sourceTree = "<group>"; };
+		A521E89E1AE27F7B00EC140E /* NullModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NullModel.h; sourceTree = "<group>"; };
+		A521E89F1AE27F7B00EC140E /* NullModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullModel.m; sourceTree = "<group>"; };
+		A521E8A11AE27F8A00EC140E /* NullRestApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NullRestApi.h; sourceTree = "<group>"; };
+		A521E8A21AE27F8A00EC140E /* NullRestApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullRestApi.m; sourceTree = "<group>"; };
+		A521E8A51AE2800800EC140E /* NullModelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NullModelDelegate.h; sourceTree = "<group>"; };
+		A521E8A61AE2803B00EC140E /* NullRestApiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NullRestApiDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,7 @@
 		A521E8731AE27F0F00EC140E /* ProjectNull */ = {
 			isa = PBXGroup;
 			children = (
+				A521E89D1AE27F1F00EC140E /* Model */,
 				A521E8781AE27F0F00EC140E /* AppDelegate.h */,
 				A521E8791AE27F0F00EC140E /* AppDelegate.m */,
 				A521E87B1AE27F0F00EC140E /* MasterViewController.h */,
@@ -122,6 +131,19 @@
 				A521E8921AE27F0F00EC140E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A521E89D1AE27F1F00EC140E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A521E89E1AE27F7B00EC140E /* NullModel.h */,
+				A521E89F1AE27F7B00EC140E /* NullModel.m */,
+				A521E8A11AE27F8A00EC140E /* NullRestApi.h */,
+				A521E8A21AE27F8A00EC140E /* NullRestApi.m */,
+				A521E8A51AE2800800EC140E /* NullModelDelegate.h */,
+				A521E8A61AE2803B00EC140E /* NullRestApiDelegate.h */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,8 +247,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A521E87A1AE27F0F00EC140E /* AppDelegate.m in Sources */,
+				A521E8A31AE27F8A00EC140E /* NullRestApi.m in Sources */,
 				A521E87D1AE27F0F00EC140E /* MasterViewController.m in Sources */,
 				A521E8771AE27F0F00EC140E /* main.m in Sources */,
+				A521E8A01AE27F7B00EC140E /* NullModel.m in Sources */,
 				A521E8801AE27F0F00EC140E /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
