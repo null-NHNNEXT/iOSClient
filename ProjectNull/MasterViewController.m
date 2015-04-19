@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "MasterViewCell.h"
 
 @interface MasterViewController () <NullModelDelegate>
 
@@ -91,7 +92,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+	MasterViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MasterViewCell" forIndexPath:indexPath];
 
 	NSDate *object = self.objects[indexPath.row];
 	cell.textLabel.text = [object description];
