@@ -10,4 +10,10 @@
 
 @interface MasterViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentDigest;
+@property (weak, nonatomic) IBOutlet UILabel *writerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
 @end

@@ -52,6 +52,7 @@
 	if (!self.objects) {
 	    self.objects = [[NSMutableArray alloc] init];
 	}
+	
 	[self.objects insertObject:[NSDate date] atIndex:0];
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 	[self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -95,7 +96,11 @@
 	MasterViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MasterViewCell" forIndexPath:indexPath];
 
 	NSDate *object = self.objects[indexPath.row];
-	cell.textLabel.text = [object description];
+	cell.profileImage.image = [UIImage imageNamed:@"DummyProfile1.png"];
+	cell.titleLabel.text = @"Dummy Title";
+	cell.contentDigest.text = [object description];
+	cell.writerLabel.text = @"Dummy Writer";
+	cell.timeLabel.text = @"12:00";
 	return cell;
 }
 
