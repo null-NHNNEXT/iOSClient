@@ -19,6 +19,5 @@
 @property (weak, nonatomic) id<NullModelDelegate> delegate;
 
 + (id)sharedInstance;
-- (void)fetchPosts;
 
 @end

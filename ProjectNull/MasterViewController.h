@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NullModel.h"
 
 @interface MasterViewController : UITableViewController
-
 
 @end
 

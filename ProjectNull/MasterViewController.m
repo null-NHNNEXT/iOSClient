@@ -9,15 +9,20 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 
-@interface MasterViewController ()
+@interface MasterViewController () <NullModelDelegate>
 
-@property NSMutableArray *objects;
+@property (weak, nonatomic) NullModel * model;
+@property NSMutableArray * objects;
+@property NSArray * posts;
 @end
 
 @implementation MasterViewController
 
 - (void)awakeFromNib {
 	[super awakeFromNib];
+	
+	self.model = [NullModel sharedInstance];
+	self.model.delegate = self;
 }
 
 - (void)viewDidLoad {
@@ -27,6 +32,11 @@
 
 	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 	self.navigationItem.rightBarButtonItem = addButton;
+
+	NSLog(@"MasterViewController:viewDidLoad -> register notification(NullModelDidReceivedPosts)");
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updatePosts:) name:@"NullModelDidReceivedPosts" object:nil];
+	NSLog(@"MasterViewController:viewDidLoad -> post notification(NullModelWillStartFetchingPosts)");
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"NullModelWillStartFetchingPosts" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +51,21 @@
 	[self.objects insertObject:[NSDate date] atIndex:0];
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 	[self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (void)updatePosts:(NSNotification *)notification {
+	[self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:false];
+}
+
+#pragma mark - NullModelDelegate
+
+- (void)didReceivePosts:(NSArray *)posts {
+	self.posts = posts;
+	[self insertNewObject:nil];
+}
+
+- (void)fetchingPostsFailedWithError:(NSError *)error {
+	// TODO
 }
 
 #pragma mark - Segues

@@ -7,6 +7,7 @@
 //
 
 #import "NullRestApi.h"
+#import "NullRestApiDelegate.h"
 
 @implementation NullRestApi
 
@@ -23,6 +24,10 @@
 //			//			[self.delegate receivedPostsJSON:data];
 //		}
 //	}];
+
+	// Test Code
+	NSLog(@"NullRestApi:fetchPostsFromGroup -> NullModel:receivedPostsJSON");
+	[self.delegate receivedPostsJSON:nil];
 }
 
 @end
