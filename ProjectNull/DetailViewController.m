@@ -8,7 +8,9 @@
 
 #import "DetailViewController.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () <NullModelDetailDelegate>
+
+@property NSArray * comments;
 
 @end
 
@@ -41,6 +43,16 @@
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
+}
+
+#pragma mark - NullModelDetailDelegate
+
+- (void)didReceiveComments:(NSArray *)comments {
+	self.comments = comments;
+}
+
+- (void)fetchingCommentsFailedWithError:(NSError *)error {
+	NSLog(@"Error: %@; %@", error, [error localizedDescription]);
 }
 
 @end

@@ -33,6 +33,9 @@
 	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 	self.navigationItem.rightBarButtonItem = addButton;
 
+	UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"blackboard.png"]];
+	[self.tableView setBackgroundView:imageView];
+
 	NSLog(@"MasterViewController:viewDidLoad -> register notification(NullModelDidReceivedPosts)");
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updatePosts:) name:@"NullModelDidReceivedPosts" object:nil];
 	NSLog(@"MasterViewController:viewDidLoad -> post notification(NullModelWillStartFetchingPosts)");
@@ -61,11 +64,10 @@
 
 - (void)didReceivePosts:(NSArray *)posts {
 	self.posts = posts;
-	[self insertNewObject:nil];
 }
 
 - (void)fetchingPostsFailedWithError:(NSError *)error {
-	// TODO
+	NSLog(@"Error: %@; %@", error, [error localizedDescription]);
 }
 
 #pragma mark - Segues

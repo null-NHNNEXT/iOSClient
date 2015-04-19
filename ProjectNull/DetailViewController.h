@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NullModel.h"
 
 @interface DetailViewController : UIViewController
 

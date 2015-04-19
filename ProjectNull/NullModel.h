@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 
 #import "NullModelDelegate.h"
+#import "NullModelDetailDelegate.h"
 #import "NullRestApiDelegate.h"
+#import "Post.h"
+#import "Comment.h"
 
 @class NullRestApi;
 
@@ -17,7 +20,17 @@
 
 @property (strong, nonatomic) NullRestApi * restApi;
 @property (weak, nonatomic) id<NullModelDelegate> delegate;
+@property (weak, nonatomic) id<NullModelDetailDelegate> detailDelegate;
 
 + (id)sharedInstance;
+
+- (void)addPost:(Post *)post;
+- (void)modifyPost:(Post *)post;
+- (void)deletePost:(Post *)post;
+
+- (void)selectPost:(Post *)post;
+
+- (void)addComment:(Comment *)comment withPost:(Post *)post;
+- (void)deleteComment:(Comment *)comment;
 
 @end

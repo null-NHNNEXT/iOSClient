@@ -17,6 +17,9 @@
 		A521E8941AE27F0F00EC140E /* ProjectNullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A521E8931AE27F0F00EC140E /* ProjectNullTests.m */; };
 		A521E8A01AE27F7B00EC140E /* NullModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A521E89F1AE27F7B00EC140E /* NullModel.m */; };
 		A521E8A31AE27F8A00EC140E /* NullRestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A521E8A21AE27F8A00EC140E /* NullRestApi.m */; };
+		A56DBBA21AE3F6490061BB5C /* blackboard.png in Resources */ = {isa = PBXBuildFile; fileRef = A56DBBA11AE3F6490061BB5C /* blackboard.png */; };
+		A56DBBA61AE3F8960061BB5C /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = A56DBBA51AE3F8960061BB5C /* Post.m */; };
+		A56DBBA91AE3F9E70061BB5C /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = A56DBBA81AE3F9E70061BB5C /* Comment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		A521E8A21AE27F8A00EC140E /* NullRestApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullRestApi.m; sourceTree = "<group>"; };
 		A521E8A51AE2800800EC140E /* NullModelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NullModelDelegate.h; sourceTree = "<group>"; };
 		A521E8A61AE2803B00EC140E /* NullRestApiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NullRestApiDelegate.h; sourceTree = "<group>"; };
+		A56DBBA11AE3F6490061BB5C /* blackboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackboard.png; sourceTree = "<group>"; };
+		A56DBBA41AE3F8960061BB5C /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		A56DBBA51AE3F8960061BB5C /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		A56DBBA71AE3F9E70061BB5C /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		A56DBBA81AE3F9E70061BB5C /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		A56DBBAB1AE405340061BB5C /* NullModelDetailDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NullModelDetailDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +101,8 @@
 		A521E8731AE27F0F00EC140E /* ProjectNull */ = {
 			isa = PBXGroup;
 			children = (
+				A56DBBA31AE3F8370061BB5C /* Entity */,
+				A56DBBA11AE3F6490061BB5C /* blackboard.png */,
 				A521E89D1AE27F1F00EC140E /* Model */,
 				A521E8781AE27F0F00EC140E /* AppDelegate.h */,
 				A521E8791AE27F0F00EC140E /* AppDelegate.m */,
@@ -138,12 +149,24 @@
 			children = (
 				A521E89E1AE27F7B00EC140E /* NullModel.h */,
 				A521E89F1AE27F7B00EC140E /* NullModel.m */,
+				A521E8A51AE2800800EC140E /* NullModelDelegate.h */,
+				A56DBBAB1AE405340061BB5C /* NullModelDetailDelegate.h */,
 				A521E8A11AE27F8A00EC140E /* NullRestApi.h */,
 				A521E8A21AE27F8A00EC140E /* NullRestApi.m */,
-				A521E8A51AE2800800EC140E /* NullModelDelegate.h */,
 				A521E8A61AE2803B00EC140E /* NullRestApiDelegate.h */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		A56DBBA31AE3F8370061BB5C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A56DBBA41AE3F8960061BB5C /* Post.h */,
+				A56DBBA51AE3F8960061BB5C /* Post.m */,
+				A56DBBA71AE3F9E70061BB5C /* Comment.h */,
+				A56DBBA81AE3F9E70061BB5C /* Comment.m */,
+			);
+			name = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +251,7 @@
 			files = (
 				A521E8831AE27F0F00EC140E /* Main.storyboard in Resources */,
 				A521E8881AE27F0F00EC140E /* LaunchScreen.xib in Resources */,
+				A56DBBA21AE3F6490061BB5C /* blackboard.png in Resources */,
 				A521E8851AE27F0F00EC140E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,10 +272,12 @@
 			files = (
 				A521E87A1AE27F0F00EC140E /* AppDelegate.m in Sources */,
 				A521E8A31AE27F8A00EC140E /* NullRestApi.m in Sources */,
+				A56DBBA61AE3F8960061BB5C /* Post.m in Sources */,
 				A521E87D1AE27F0F00EC140E /* MasterViewController.m in Sources */,
 				A521E8771AE27F0F00EC140E /* main.m in Sources */,
 				A521E8A01AE27F7B00EC140E /* NullModel.m in Sources */,
 				A521E8801AE27F0F00EC140E /* DetailViewController.m in Sources */,
+				A56DBBA91AE3F9E70061BB5C /* Comment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +468,7 @@
 				A521E8991AE27F0F00EC140E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A521E89A1AE27F0F00EC140E /* Build configuration list for PBXNativeTarget "ProjectNullTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +477,7 @@
 				A521E89C1AE27F0F00EC140E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

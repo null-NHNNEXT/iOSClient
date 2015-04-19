@@ -30,4 +30,10 @@
 	[self.delegate receivedPostsJSON:nil];
 }
 
+- (void)fetchCommentsFromPost:(NSString *)postId {
+	// Test Code
+	NSLog(@"NullRestApi:fetchPostsFromGroup -> NullModel:receivedPostsJSON");
+	[self.delegate receivedCommentsJSON:nil];
+}
+
 @end

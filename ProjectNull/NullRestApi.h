@@ -14,5 +14,6 @@
 @property (weak, nonatomic) id<NullRestApiDelegate> delegate;
 
 - (void)fetchPostsFromGroup:(NSString *)groupId;
+- (void)fetchCommentsFromPost:(NSString *)postId;
 
 @end

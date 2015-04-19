@@ -11,6 +11,8 @@
 @protocol NullRestApiDelegate <NSObject>
 
 - (void)receivedPostsJSON:(NSData *)objectNotation;
+- (void)receivedCommentsJSON:(NSData *)objectNotation;
 - (void)fetchingPostsFailedWithError:(NSError *)error;
+- (void)fetchingCommentsFailedWithError:(NSError *)error;
 
 @end
